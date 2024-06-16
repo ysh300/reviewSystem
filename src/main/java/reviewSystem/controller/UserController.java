@@ -26,5 +26,17 @@ public class UserController {
         userService.delById(id);
         return Result.success();
     }
+    //    根据id查询
+    @GetMapping("/{id}")
+    public Result selectById(@PathVariable Integer id){
+        User user=userService.selectById(id);
+        return Result.success(user);
+    }
+    //    修改用户
+    @PutMapping
+    public Result update(@RequestBody User user){
+        userService.update(user);
+        return Result.success();
+    }
 
 }

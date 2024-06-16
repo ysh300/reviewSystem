@@ -9,5 +9,9 @@ public interface UserService {
 
     void delById(Integer id);
 
+    User selectById(Integer id);
+
+    void update(User user);
+
 
 }

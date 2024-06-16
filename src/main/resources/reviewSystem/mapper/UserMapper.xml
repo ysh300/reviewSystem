@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewSystem.mapper.UserMapper">
+
+    <!--    修改用户-->
+    <!--    不一定要全部修改，所以要用动态sql-->
+    <update id="update">
+        update user
+        <set>
+            <if test="name!=null and name!='' ">
+                name=#{name},
+            </if>
+            <if test="school!=null and school!='' ">
+                school=#{school},
+            </if>
+            <if test="identity!=null">
+                identity=#{identity},
+            </if>
+            <if test="username!=null">
+                username=#{username},
+            </if>
+            <if test="password!=null">
+                password=#{password},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
