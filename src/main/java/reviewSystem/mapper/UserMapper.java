@@ -1,5 +1,6 @@
 package reviewSystem.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -13,5 +14,8 @@ public interface UserMapper {
     @Insert("insert into user(name, school, identity, username, password)" +
             "values (#{name},#{school},#{identity},#{username},#{password})")
     void add(User user);
+
+    @Delete("delete from user where id=#{id}")
+    void delById(Integer id);
 
 }

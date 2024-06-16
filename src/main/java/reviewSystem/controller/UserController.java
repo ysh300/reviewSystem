@@ -20,4 +20,11 @@ public class UserController {
         return Result.success();
     }
 
+    //    删除用户
+    @DeleteMapping("/{id}")
+    private Result delById(@PathVariable Integer id){
+        userService.delById(id);
+        return Result.success();
+    }
+
 }

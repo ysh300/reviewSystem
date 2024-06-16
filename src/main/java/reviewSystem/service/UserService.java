@@ -7,5 +7,7 @@ public interface UserService {
 
     void add(User user);
 
+    void delById(Integer id);
+
 
 }
